@@ -204,10 +204,35 @@ export function translateWellTypes(
       case "row-row":
         return wells;
       default:
-        throw Error(`Cannot convert from ${fromType} to ${toType}`);
+        console.warn(`Cannot convert from ${fromType} to ${toType}`);
+        return wells.map((d) => null);
     }
   } else {
+    let plateWarning =
+      "When converting to or from well numbers, plateLayoutSize parameter is required (1,6,12,24,48,96,or 384)";
+    let nullWells: null[] = wells.map((d) => null);
     switch (`${fromType}-${toType}`) {
+      case "padded-number":
+        console.warn(plateWarning);
+        return nullWells;
+      case "unpadded-number":
+        console.warn(plateWarning);
+        return nullWells;
+      case "number-padded":
+        console.warn(plateWarning);
+        return nullWells;
+      case "number-unpadded":
+        console.warn(plateWarning);
+        return nullWells;
+      case "number-row":
+        console.warn(plateWarning);
+        return nullWells;
+      case "number-col":
+        console.warn(plateWarning);
+        return nullWells;
+      case "number-number":
+        console.warn(plateWarning);
+        return nullWells;
       case "padded-padded":
         return fromUnpaddedToPadded(wells);
       case "padded-unpadded":
@@ -216,8 +241,6 @@ export function translateWellTypes(
         return fromPaddedToRow(wells);
       case "padded-col":
         return fromPaddedToCol(wells);
-      case "number-number":
-        return fromNumberToNumber(wells, null);
       case "unpadded-padded":
         return fromUnpaddedToPadded(wells);
       case "unpadded-unpadded":
@@ -231,7 +254,8 @@ export function translateWellTypes(
       case "row-row":
         return wells;
       default:
-        throw Error(`Cannot convert from ${fromType} to ${toType}`);
+        console.warn(`Cannot convert from ${fromType} to ${toType}`);
+        return nullWells;
     }
   }
 }
