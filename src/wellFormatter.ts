@@ -83,10 +83,15 @@ function wellFormatter(
     plateLayoutNumber == null &&
     (to === "number" || !someWellsAreNotNumbers)
   ) {
-    throw Error(`Errors:\n
-      Cannot translate from column numbers\n
-      OR\n
-      Cannot can translate well numbers without a plateLayoutNumber (1, 6, 12, 24, 48, 96 or 384)`);
+    console.warn(
+      `Cannot can translate well numbers without a plateLayoutNumber (1, 6, 12, 24, 48, 96 or 384)`
+    );
+    if (isSingleWell) {
+      return null;
+    } else {
+      let nulls = fromWells.map((d) => null);
+      return nulls;
+    }
   }
 
   //determine what is the from-type wells
