@@ -2,17 +2,13 @@
 
 ## :star2: Supports Well IDs from 384-, 96-, 48-, 24-, 12- and 6-well-plates :star2:
 
-<div style="background-color:rgb(230,230,230);padding:1em;">
+## wellIDFormatter(`inputWells`, `toFormat`, `plateSize` = `null`)
 
-## wellIDFormatter(<span style="font-style:italic;color:purple;"> inputWells</span>, <span style="font-style:italic;color:green;"> toFormat</span>,<span style="font-style:italic;color:blue;"> plateSize</span>=<span style="font-style:italic;color:grey;">null</span>)
+`inputWells`: string, number, strings array or numbers array
 
-### <span style="font-style:italic;color:purple;">inputWells</span> : string, number, strings array or numbers array
+`toFormat`: "padded", "unpadded", "number", "row" or "col"
 
-### <span style="font-style:italic;color:green;">toFormat</span> : "padded", "unpadded", "number", "row" or "col"
-
-### <span style="font-style:italic;color:blue;">plateSize</span> : null, 6, 12, 24, 48, 96 or 384
-
-</div>
+`plateSize` : null, 6, 12, 24, 48, 96 or 384
 
 ## Install
 
@@ -47,3 +43,7 @@ wellIDFormatter([null, undefined, "-", "A1"], "padded"); // => [null, null, null
 //also accepts single well IDs
 wellIDFormatter("J20", "number", 384); // => 236
 ```
+
+For Browswer and Node
+
+No Dependencies
