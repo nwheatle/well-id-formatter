@@ -98,8 +98,6 @@ function wellFormatter(
   let fromtype: FromWellIDTypes = null;
 
   let fromTypes = fromWells.map((well) => detectFromWellIDType(well));
-  // console.log("fromTypes", fromTypes);
-  // console.log(fromTypes);
 
   fromTypes = fromTypes.filter(onlyUnique);
 
@@ -165,7 +163,7 @@ export function translateWellTypes(
   if (!(plateLayoutNumber == null)) {
     //user must provide a platelayout for conversions invovling well number ids.
     let plate_layout: PlateLayout = plateLayouts[plateLayoutNumber];
-    // console.log(`${fromType}-${toType}`);
+
     switch (`${fromType}-${toType}`) {
       case "padded-number":
         return fromPaddedToNumber(wells, plate_layout);

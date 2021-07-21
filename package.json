@@ -1,30 +1,36 @@
 {
   "name": "well-id-formatter",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Convert between well ID formats. For example: A1 => A01",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "prepublish": "tsc",
+    "init_tsc_config": "tsc -init"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nwheatle/well-id-formatter.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "well id",
+    "padded",
+    "unpadded",
+    "well number",
+    "well row",
+    "well column",
+    "convert",
+    "format"
+  ],
+  "author": "Nicole Wheatley",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/nwheatle/well-id-formatter/issues"
   },
   "homepage": "https://github.com/nwheatle/well-id-formatter#readme",
   "devDependencies": {
-    "@testdeck/mocha": "0.1.2",
     "@types/node": "16.3.3",
-    "chai": "4.3.4",
-    "mocha": "9.0.2",
-    "nyc": "15.1.0",
-    "ts-mockito": "2.6.1",
     "ts-node": "10.1.0",
     "tslib": "2.3.0",
     "typescript": "4.3.5"
