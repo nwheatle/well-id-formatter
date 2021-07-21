@@ -1,6 +1,6 @@
 # well-id-formatter
 
-## Supports Well IDs from 384-, 96-, 48-, 24-, 12- and 6-well-plates :thumbsup: :bowtie: :star2:
+## :star2: Supports Well IDs from 384-, 96-, 48-, 24-, 12- and 6-well-plates :star2:
 
 <div style="background-color:rgb(230,230,230);padding:1em;">
 
