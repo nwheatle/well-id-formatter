@@ -1,11 +1,11 @@
-import wellFormatter from "./wellFormatter";
+import wellIDFormatter from "./wellIDFormatter";
 import plateLayouts from "./plates";
 import type { PlateSizes } from "./wellTypes";
 import util from "util";
 // // var wellFormatter = require("./wellFormatter.ts");
 
 let test_plate_sizes = [1, 6, 12, 48, 96, 384];
-let test_input_well = ["A1", "A01", "1", 1, "A", 0, "C10", "F8"];
+let test_input_well = ["A1", "C2", "B2"];
 let test_input_wells = [
   ["J20"],
   //   ["A1", "A2", "A12", "B1", "B12", "E5", "H11"], //perfect unpadded
@@ -43,16 +43,16 @@ let test_input_wells = [
 type words = "padded" | "unpadded" | "number" | "col" | "row";
 
 let tos: words[] = ["unpadded", "padded", "col", "row", "number"];
-var platenum: PlateSizes = 384;
+var platenum: PlateSizes = 6;
 let platelayout = plateLayouts[platenum];
 // console.dir(platelayout);
 
-test_input_wells.forEach((wellset) => {
+test_input_well.forEach((wellset) => {
   console.log("\n");
   console.group(JSON.stringify(wellset));
   tos.forEach((typ) => {
     console.group(typ);
-    let formattedWells = wellFormatter(wellset, typ, platenum);
+    let formattedWells = wellIDFormatter(wellset, typ, platenum);
     console.log(JSON.stringify(formattedWells));
     console.groupEnd();
   });

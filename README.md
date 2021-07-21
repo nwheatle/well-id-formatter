@@ -45,6 +45,6 @@ wellIDFormatter("J20", "number", 384); // => 236
 wellIDFormatter(236, "row", 384); // => "J"
 ```
 
-For Browswer and Node
+For Browser and Node
 
 No Dependencies
