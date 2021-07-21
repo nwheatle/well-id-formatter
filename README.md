@@ -27,13 +27,13 @@ wellIDFormatter(["A01", "A12"], "row"); // => ['A', 'A']
 wellIDFormatter(["A1", "A12"], "col"); // => ['1', '12']
 wellIDFormatter(["A1", "A12"], "number", 96); // => ['1','12']
 
-//plate size required for number formatting
+//plateSize required for number formatting
 wellIDFormatter(["A1", "A2", "B1", "B12"], "number", 96); // => ['1', '2', '13', '24']
 wellIDFormatter(["A1", "A2", "B1", "B12"], "number", 384); // => ['1', '2', '25', '36']
 wellIDFormatter(["A1", "A2", "B1", "B12"], "number"); // => [null, null, null, null]
 wellIDFormatter([1, 2, 13, 24], "padded", 96); // => ["A01", "A02", "B01", "B12"]
 
-//plate size parameter provides stricter conversions
+//plateSize provides stricter conversions
 wellIDFormatter(["A1", "P12"], "padded"); // => ['A01','P12']
 wellIDFormatter(["A1", "P12"], "padded", 96); // => ['A01',null] 'P12' does not exist in 96-well plate
 
@@ -42,6 +42,7 @@ wellIDFormatter([null, undefined, "-", "A1"], "padded"); // => [null, null, null
 
 //also accepts single well IDs
 wellIDFormatter("J20", "number", 384); // => 236
+wellIDFormatter(236, "row", 384); // => "J"
 ```
 
 For Browswer and Node
