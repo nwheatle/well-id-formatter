@@ -1,0 +1,9 @@
+export declare const rows: string[];
+export declare const cols: string[];
+export declare const padded_cols: string[];
+export declare const well_nums: string[];
+export declare const well_ids: string[];
+export declare const padded_well_ids: string[];
+export declare const padded_only_well_ids: string[];
+export declare const rowRegex: RegExp;
+export declare const colRegex: RegExp;

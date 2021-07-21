@@ -19,7 +19,7 @@ $ npm install well-id-formatter
 ## Usage
 
 ```js
-import wellIDFormatter from "well-id-formatter";
+import { wellIDFormatter } from "well-id-formatter";
 
 wellIDFormatter(["A1", "A12"], "padded"); // => ['A01', 'A12']
 wellIDFormatter(["A01", "A12"], "unpadded"); // => ['A1', 'A12']

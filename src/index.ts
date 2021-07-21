@@ -1,3 +1,9 @@
-import wellFormatter from "./wellFormatter";
+import wellIDFormatter from "./wellIDFormatter";
 
-export default wellFormatter;
+console.log(wellIDFormatter("A1", "padded"));
+
+module.exports = {
+  wellIDFormatter,
+};
+
+export default wellIDFormatter;
