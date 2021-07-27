@@ -5,3 +5,6 @@ export default class PlateWells {
     getPlateWells: (plateSize: PlateSizesType, wellType: AllWellFormatsType) => string[];
     getPlate: (plateSize: PlateSizesType) => Plate;
 }
+declare let getPlateWells: (plateSize: PlateSizesType, wellType: AllWellFormatsType) => string[];
+declare let getPlate: (plateSize: PlateSizesType) => Plate;
+export { getPlateWells, getPlate };

@@ -68,3 +68,9 @@ export default class PlateWells {
     return plate_aoo;
   };
 }
+
+let plateWellsClass = new PlateWells();
+let getPlateWells = plateWellsClass.getPlateWells;
+let getPlate = plateWellsClass.getPlate;
+
+export { getPlateWells, getPlate };

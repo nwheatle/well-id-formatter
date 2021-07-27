@@ -1,2 +1,3 @@
 import wellIDFormatter from "./wellIDFormatter";
-export default wellIDFormatter;
+import { getPlateWells, getPlate } from "./getPlateWells";
+export { wellIDFormatter, getPlateWells, getPlate };

@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.getPlate = exports.getPlateWells = void 0;
 const plates_1 = __importDefault(require("./plates"));
 class PlateWells {
     constructor() {
@@ -60,3 +61,8 @@ class PlateWells {
     }
 }
 exports.default = PlateWells;
+let plateWellsClass = new PlateWells();
+let getPlateWells = plateWellsClass.getPlateWells;
+exports.getPlateWells = getPlateWells;
+let getPlate = plateWellsClass.getPlate;
+exports.getPlate = getPlate;

@@ -1,14 +1,14 @@
 import wellIDFormatter from "./wellIDFormatter";
-import PlateWells from "./getPlateWells";
+import { getPlateWells, getPlate } from "./getPlateWells";
+import {
+  PlateLayout,
+  PlateLayouts,
+  RowCol,
+  PlateSizesType,
+  WellFormatsType,
+  AllWellFormatsType,
+  Plate,
+  PlateWell,
+} from "./wellTypes";
 
-let plateWellsClass = new PlateWells();
-let getPlateWells = plateWellsClass.getPlateWells;
-let getPlate = plateWellsClass.getPlate;
-
-module.exports = {
-  wellIDFormatter: wellIDFormatter,
-  getPlate: getPlate,
-  getPlateWells: getPlateWells,
-};
-
-export default wellIDFormatter;
+export { wellIDFormatter, getPlateWells, getPlate };
