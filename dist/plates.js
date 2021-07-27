@@ -85,7 +85,7 @@ const plt_384 = {
     well_ids: createWellIDs(wellUnitBasics_1.rows.filter((row) => row <= "P" && row.length === 1), wellUnitBasics_1.cols.filter((col) => +col <= 24)),
     padded_well_ids: createWellIDs(wellUnitBasics_1.rows.filter((row) => row <= "P" && row.length === 1), wellUnitBasics_1.padded_cols.filter((col) => +col <= 24)),
 };
-const resevoir = {
+const plt_1 = {
     id: "plt_1",
     well_count: 1,
     rows: ["A"],
@@ -97,7 +97,7 @@ const resevoir = {
     padded_well_ids: ["A01"],
 };
 const plateLayouts = {
-    1: resevoir,
+    1: plt_1,
     6: plt_6,
     8: plt_8,
     12: plt_12,

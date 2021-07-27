@@ -1,3 +1,5 @@
+import PlateWells from "./getPlateWells";
+
 interface RowCol {
   row: string;
   col: string;
@@ -15,20 +17,8 @@ interface PlateLayout {
   padded_well_ids: string[];
 }
 
-interface Reservoir extends PlateLayout {
-  id: "plt_1";
-  well_count: 1;
-  rows: ["A"];
-  columns: ["1"];
-  padded_columns: ["01"];
-  well_numbers: ["1"];
-  dims: [1, 1];
-  well_ids: ["A1"];
-  padded_well_ids: ["A01"];
-}
-
 interface PlateLayouts {
-  1: Reservoir;
+  1: PlateLayout;
   6: PlateLayout;
   8: PlateLayout;
   12: PlateLayout;
@@ -38,6 +28,35 @@ interface PlateLayouts {
   384: PlateLayout;
 }
 
-type PlateSizes = 1 | 6 | 12 | 24 | 48 | 96 | 384;
+type WellFormatsType = "padded" | "unpadded" | "number" | "col" | "row";
+type AllWellFormatsType =
+  | "padded"
+  | "unpadded"
+  | "number"
+  | "unique_columns"
+  | "unique_rows"
+  | "all_columns"
+  | "all_rows";
 
-export type { PlateLayout, PlateLayouts, Reservoir, RowCol, PlateSizes };
+type PlateSizesType = 1 | 6 | 12 | 24 | 48 | 96 | 384;
+
+interface PlateWell {
+  padded: string;
+  unpadded: string;
+  number: string;
+  row: string;
+  column: string;
+}
+
+type Plate = PlateWell[];
+
+export type {
+  PlateLayout,
+  PlateLayouts,
+  RowCol,
+  PlateSizesType,
+  WellFormatsType,
+  AllWellFormatsType,
+  Plate,
+  PlateWell,
+};

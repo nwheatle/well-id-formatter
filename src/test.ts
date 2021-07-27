@@ -1,6 +1,6 @@
 import wellIDFormatter from "./wellIDFormatter";
 import plateLayouts from "./plates";
-import type { PlateSizes } from "./wellTypes";
+import type { PlateSizesType } from "./wellTypes";
 import util from "util";
 // // var wellFormatter = require("./wellFormatter.ts");
 
@@ -43,7 +43,7 @@ let test_input_wells = [
 type words = "padded" | "unpadded" | "number" | "col" | "row";
 
 let tos: words[] = ["unpadded", "padded", "col", "row", "number"];
-var platenum: PlateSizes = 6;
+var platenum: PlateSizesType = 6;
 let platelayout = plateLayouts[platenum];
 // console.dir(platelayout);
 

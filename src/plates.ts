@@ -1,4 +1,4 @@
-import { PlateLayout, PlateLayouts, Reservoir } from "./wellTypes";
+import { PlateLayout, PlateLayouts } from "./wellTypes";
 import { rows, cols, padded_cols, well_nums } from "./wellUnitBasics";
 
 const createWellIDs = (rows: string[], cols: string[]) => {
@@ -137,7 +137,7 @@ const plt_384: PlateLayout = {
   ),
 };
 
-const resevoir: Reservoir = {
+const plt_1: PlateLayout = {
   id: "plt_1",
   well_count: 1,
   rows: ["A"],
@@ -150,7 +150,7 @@ const resevoir: Reservoir = {
 };
 
 const plateLayouts: PlateLayouts = {
-  1: resevoir,
+  1: plt_1,
   6: plt_6,
   8: plt_8,
   12: plt_12,

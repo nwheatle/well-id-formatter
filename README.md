@@ -19,7 +19,9 @@ $ npm install well-id-formatter
 ## Usage
 
 ```js
-import { wellIDFormatter } from "well-id-formatter";
+import { wellIDFormatter, getPlate, getPlateWells } from "well-id-formatter";
+
+//wellIDFormatter converts between different well ID formats
 
 wellIDFormatter(["A1", "A12"], "padded"); // => ['A01', 'A12']
 wellIDFormatter(["A01", "A12"], "unpadded"); // => ['A1', 'A12']
@@ -43,8 +45,28 @@ wellIDFormatter([null, undefined, "-", "A1"], "padded"); // => [null, null, null
 //also accepts single well IDs
 wellIDFormatter("J20", "number", 384); // => 236
 wellIDFormatter(236, "row", 384); // => "J"
+
+//getPlate(plateSize)
+getPlate(6);
+// =>
+// [
+//   { padded: 'A01', unpadded: 'A1', number: '1', row: 'A', column: '1' },
+//   { padded: 'A02', unpadded: 'A2', number: '2', row: 'A', column: '2' },
+//   { padded: 'A03', unpadded: 'A3', number: '3', row: 'A', column: '3' },
+//   { padded: 'B01', unpadded: 'B1', number: '4', row: 'B', column: '1' },
+//   { padded: 'B02', unpadded: 'B2', number: '5', row: 'B', column: '2' },
+//   { padded: 'B03', unpadded: 'B3', number: '6', row: 'B', column: '3' }
+// ]
+
+//getPlateWells(plateSize, format)
+getPlateWells(6, "padded"); // => [ 'A01', 'A02', 'A03', 'B01', 'B02', 'B03' ]
+getPlateWells(6, "all_rows"); // => [ 'A', 'A', 'A', 'B', 'B', 'B' ]
+getPlateWells(6, "unique_rows"); // => ['A', 'B']
+// accepted formats = 'padded', 'unpadded', 'all_columns', 'unique_columns', 'all_rows', 'unique_rows' or 'number'
 ```
 
-For Browser and Node
+For Browser and NodeJS
 
-No Dependencies
+Typescript compatible
+
+Zero Dependencies!
