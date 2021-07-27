@@ -1,0 +1,16 @@
+import type { PlateLayout, RowCol } from "./wellTypes";
+export declare function fromUnpaddedToPadded(wells: string[], platelayout?: PlateLayout | null): (string | null)[];
+export declare function fromUnpaddedToUnpadded(wells: string[], platelayout?: PlateLayout | null): (string | null)[];
+export declare function fromUnpaddedToRow(wells: string[], platelayout?: PlateLayout | null): (string | null)[];
+export declare function fromUnpaddedToCol(wells: string[], platelayout?: PlateLayout | null): (string | null)[];
+export declare function fromUnpaddedToNumber(wells: string[], plate_layout: PlateLayout): (string | null)[];
+export declare function fromPaddedToUnpadded(wells: string[], platelayout?: PlateLayout | null): (string | null)[];
+export declare function fromPaddedToRow(wells: string[], platelayout?: PlateLayout | null): (string | null)[];
+export declare function fromPaddedToCol(wells: string[], platelayout?: PlateLayout | null): (string | null)[];
+export declare function fromPaddedToNumber(wells: string[], plate_layout: PlateLayout): (string | null)[];
+export declare function fromNumberToRowCol(wells: string[], plate_layout: PlateLayout): (RowCol | null)[];
+export declare function fromNumberToRow(wells: string[], plate_layout: PlateLayout): (string | null)[];
+export declare function fromNumberToCol(wells: string[], plate_layout: PlateLayout): (string | null)[];
+export declare function fromNumberToUnpadded(wells: string[], plate_layout: PlateLayout): (string | null)[];
+export declare function fromNumberToNumber(wells: string[], plate_layout: PlateLayout | null): (string | null)[];
+export declare function fromNumberToPadded(wells: string[], plate_layout: PlateLayout): (string | null)[];

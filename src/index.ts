@@ -6,9 +6,9 @@ let getPlateWells = plateWellsClass.getPlateWells;
 let getPlate = plateWellsClass.getPlate;
 
 module.exports = {
-  wellIDFormatter,
-  getPlate,
-  getPlateWells,
+  wellIDFormatter: wellIDFormatter,
+  getPlate: getPlate,
+  getPlateWells: getPlateWells,
 };
 
 export default wellIDFormatter;
