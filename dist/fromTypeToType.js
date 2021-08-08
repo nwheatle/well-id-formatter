@@ -109,6 +109,7 @@ function fromUnpaddedToCol(wells, platelayout = null) {
 }
 exports.fromUnpaddedToCol = fromUnpaddedToCol;
 function fromUnpaddedToNumber(wells, plate_layout) {
+    // console.log(wells);
     return fromPaddedToNumber(wells, plate_layout);
 }
 exports.fromUnpaddedToNumber = fromUnpaddedToNumber;
@@ -188,14 +189,24 @@ function fromPaddedToCol(wells, platelayout = null) {
 }
 exports.fromPaddedToCol = fromPaddedToCol;
 function fromPaddedToNumber(wells, plate_layout) {
+    // console.log("plate_layout", plate_layout);
     let number_wells_in_one_row = plate_layout.dims[1];
     let result = wells.map((well) => {
         let row = well.match(wellUnitBasics_1.rowRegex);
         let col = well.match(wellUnitBasics_1.colRegex);
         if (row && col) {
+            // console.log("row[0]", row[0]);
+            // console.log("plate_layout.rows", plate_layout.rows);
+            // console.log(
+            //   "plate_layout.rows.indexOf(row[0])",
+            //   plate_layout.rows.indexOf(row[0])
+            // );
             let number_of_rows = plate_layout.rows.indexOf(row[0]);
             let well_number = number_wells_in_one_row * number_of_rows + +col[0];
             if (number_of_rows >= plate_layout.dims[0] || number_of_rows < 0) {
+                return null;
+            }
+            else if (+col >= plate_layout.dims[1] || +col < 0) {
                 return null;
             }
             else if (well_number < 1 || well_number > plate_layout.well_count) {

@@ -103,6 +103,8 @@ function wellFormatter(from_, to, plateLayoutNumber = null) {
     }
     //now that we know what the from well type is, translate to the 'to' well type
     let totype = to;
+    debugger;
+    console.log("fromwells:", fromWells.map((well) => well));
     let formattedWells = translateWellTypes(fromWells.map((well) => well), fromtype, totype, plateLayoutNumber);
     if (isSingleWell) {
         return formattedWells[0];
@@ -115,6 +117,7 @@ function translateWellTypes(wells, fromType, toType, plateLayoutNumber) {
     if (!(plateLayoutNumber == null)) {
         //user must provide a platelayout for conversions invovling well number ids.
         let plate_layout = plates_1.default[plateLayoutNumber];
+        // console.log(`${fromType}-${toType}`);
         switch (`${fromType}-${toType}`) {
             case "padded-number":
                 return fromTypeToType_1.fromPaddedToNumber(wells, plate_layout);
