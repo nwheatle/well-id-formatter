@@ -215,7 +215,7 @@ export function fromPaddedToNumber(
       let well_number = number_wells_in_one_row * number_of_rows + +col[0];
       if (number_of_rows >= plate_layout.dims[0] || number_of_rows < 0) {
         return null;
-      } else if (+col >= plate_layout.dims[1] || +col < 0) {
+      } else if (+col > plate_layout.dims[1] || +col < 0) {
         return null;
       } else if (well_number < 1 || well_number > plate_layout.well_count) {
         return null;
