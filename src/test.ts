@@ -48,15 +48,15 @@ let platelayout = plateLayouts[platenum];
 // console.dir(platelayout);
 
 test_input_well.forEach((wellset) => {
-  console.log("\n");
+  // console.log("\n");
   console.group(JSON.stringify(wellset));
   tos.forEach((typ) => {
     console.group(typ);
     let formattedWells = wellIDFormatter(wellset, typ, platenum);
-    console.log(JSON.stringify(formattedWells));
+    // console.log(JSON.stringify(formattedWells));
     console.groupEnd();
   });
-  console.log("\n");
+  // console.log("\n");
   console.groupEnd();
 });
 

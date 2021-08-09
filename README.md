@@ -16,8 +16,6 @@
 $ npm install well-id-formatter
 ```
 
-## Version 1.1 fixed bugs :grimacing: and added new functions `getPlate` and `getPlateWells` :relaxed:.
-
 ## Usage
 
 ```js
